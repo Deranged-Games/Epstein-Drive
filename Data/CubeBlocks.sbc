@@ -1,0 +1,171 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Definitions xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <CubeBlocks>
+	<Definition xsi:type="MyObjectBuilder_ThrustDefinition">
+	  <Id>
+        <TypeId>Thrust</TypeId>
+        <SubtypeId>EpsteinCone</SubtypeId>
+      </Id>
+      <DisplayName>Epstein Thruster Cone</DisplayName>
+      <Icon>Textures\Icons\EpsteinCone.dds</Icon>
+      <CubeSize>Large</CubeSize>
+      <BlockTopology>TriangleMesh</BlockTopology>
+      <Size x="7" y="7" z="5" />
+      <ModelOffset x="0" y="0" z="0" />
+      <Model>Models\ThrusterEpstein.mwm</Model>
+      <ThrusterType>Hydrogen</ThrusterType>
+      <SilenceableByShipSoundSystem>true</SilenceableByShipSoundSystem>
+      <Components>
+        <Component Subtype="SteelPlate" Count="700" />
+        <Component Subtype="Construction" Count="100" />
+        <Component Subtype="MetalGrid" Count="350" />
+        <Component Subtype="LargeTube" Count="40" />
+        <Component Subtype="Motor" Count="20" />
+	    <Component Subtype="SmallTube" Count="75" />
+		<Component Subtype="Superconductor" Count="25" />
+	    <Component Subtype="Thrust" Count="250" />
+	    <Component Subtype="SteelPlate" Count="200" />
+      </Components>
+      <CriticalComponent Subtype="Thrust" Index="0" />
+      <MountPoints>
+      <MountPoint Side="Back" StartX="0" StartY="0" EndX="7" EndY="7" Default="true"/>   
+      </MountPoints>
+      <BuildProgressModels>
+        <Model BuildPercentUpperBound="0.33" File="Models\TCON1.mwm" />
+        <Model BuildPercentUpperBound="0.66" File="Models\TCON2.mwm" />
+        <Model BuildPercentUpperBound="1.00" File="Models\TCON3.mwm" />
+      </BuildProgressModels>
+      <VoxelPlacement>
+        <StaticMode>
+          <PlacementMode>Volumetric</PlacementMode>
+          <MaxAllowed>0.2</MaxAllowed>
+          <MinAllowed>0</MinAllowed>
+        </StaticMode>
+        <DynamicMode>
+          <PlacementMode>Volumetric</PlacementMode>
+          <MaxAllowed>0.2</MaxAllowed>
+          <MinAllowed>0</MinAllowed>
+        </DynamicMode>
+      </VoxelPlacement>
+      <BlockPairName>FHTcono11</BlockPairName>
+      <Center x="1" y="1" z="1" />
+      <MirroringY>Z</MirroringY>
+      <MirroringZ>Y</MirroringZ>
+      <EdgeType>Light</EdgeType>
+      <BuildTimeSeconds>125</BuildTimeSeconds>
+      <FuelConverter>
+        <FuelId>
+          <TypeId>GasProperties</TypeId>
+          <SubtypeId>Hydrogen</SubtypeId>
+        </FuelId>
+        <Efficiency>1</Efficiency>
+      </FuelConverter>
+      <MaxPowerConsumption>3</MaxPowerConsumption>
+      <MinPowerConsumption>0.06</MinPowerConsumption>     
+      <ResourceSinkGroup>Thrust</ResourceSinkGroup>
+      <ForceMagnitude>70000000</ForceMagnitude>
+      <SlowdownFactor>1</SlowdownFactor>
+	  <MinPlanetaryInfluence>0</MinPlanetaryInfluence>
+      <MaxPlanetaryInfluence>0.7</MaxPlanetaryInfluence>
+      <EffectivenessAtMinInfluence>1</EffectivenessAtMinInfluence>
+      <EffectivenessAtMaxInfluence>0.3</EffectivenessAtMaxInfluence>     
+      <FlameDamage>50</FlameDamage>
+      <FlameDamageLengthScale>0.9</FlameDamageLengthScale>
+      <FlameLengthScale>2.1</FlameLengthScale>
+      <FlameIdleColor>
+        <X>0.12</X>
+        <Y>0.08</Y>
+        <Z>0.75</Z>
+        <W>0.75</W>
+      </FlameIdleColor>
+      <FlameFullColor>
+        <X>0.14</X>
+        <Y>0.18</Y>
+        <Z>0.6</Z>
+        <W>0.75</W>
+      </FlameFullColor>
+      <FlamePointMaterial>EngineThrustMiddle</FlamePointMaterial>
+      <FlameLengthMaterial>EngineThrustMiddle</FlameLengthMaterial>
+      <FlameGlareMaterial>LargeGridLargeThruster</FlameGlareMaterial>
+      <FlameVisibilityDistance>5000</FlameVisibilityDistance>
+      <FlameGlareSize>0.85</FlameGlareSize>
+      <FlameGlareQuerySize>1.5</FlameGlareQuerySize>
+      <PrimarySound>EpsteinEngine</PrimarySound>
+      <DamageEffectId>213</DamageEffectId>
+      <DamagedSound>ParticleWeapExpl</DamagedSound>
+      <Public>true</Public>
+      <BlockVariants>
+        <BlockVariant>
+          <TypeId>OxygenTank</TypeId>
+          <SubtypeId>EpsteinCore</SubtypeId>
+        </BlockVariant>
+      </BlockVariants>
+      <PCU>25</PCU>
+    </Definition>
+    <Definition xsi:type="MyObjectBuilder_GasTankDefinition">
+	  <Id>
+	    <TypeId>OxygenTank</TypeId>
+	    <SubtypeId>EpsteinCore</SubtypeId>
+	  </Id>
+	  <DisplayName>Epstein Core</DisplayName>
+	  <Icon>Textures\Icons\EpsteinCore.dds</Icon>
+	  <CubeSize>Large</CubeSize>
+	  <BlockTopology>TriangleMesh</BlockTopology>
+      <Size x="5" y="5" z="5" />
+	  <ModelOffset x="0" y="0" z="0" />
+      <Model>Models\CoreEpstein.mwm</Model>
+	  <Components>
+		<Component Subtype="SteelPlate" Count="150" />
+		<Component Subtype="Construction" Count="400" />
+		<Component Subtype="MetalGrid" Count="125" />
+		<Component Subtype="LargeTube" Count="150" />
+        <Component Subtype="Motor" Count="150" />
+        <Component Subtype="Computer" Count="300" />
+		<Component Subtype="SmallTube" Count="200" />
+		<Component Subtype="Superconductor" Count="225" />
+		<Component Subtype="Thrust" Count="3250" />
+		<Component Subtype="SteelPlate" Count="50" />
+	  </Components>
+      <CriticalComponent Subtype="Thrust" Index="0" />
+	  <MountPoints>
+		<MountPoint Side="Bottom" StartX="0" StartY="0" EndX="5" EndY="5" Default="true" />
+		<MountPoint Side="Back" StartX="0" StartY="0" EndX="5" EndY="5" />
+		<MountPoint Side="Front" StartX="0" StartY="0" EndX="5" EndY="5" />
+		<MountPoint Side="Left" StartX="0" StartY="0" EndX="5" EndY="5" />
+		<MountPoint Side="Right" StartX="0" StartY="0" EndX="5" EndY="5" />
+		<MountPoint Side="Top" StartX="0" StartY="0" EndX="5" EndY="5" />
+      </MountPoints>
+	  <BuildProgressModels>
+		<Model BuildPercentUpperBound="0.33" File="Models\CON1.mwm" />
+		<Model BuildPercentUpperBound="0.60" File="Models\CON2.mwm" />
+		<Model BuildPercentUpperBound="1.0" File="Models\CON3.mwm" />
+      </BuildProgressModels>
+	  <BlockPairName>HCM_boxant</BlockPairName>
+	  <EdgeType>Light</EdgeType>
+	  <BuildTimeSeconds>225</BuildTimeSeconds>
+	  <AutorotateMode>OppositeDirections</AutorotateMode>
+	  <GuiVisible>false</GuiVisible>
+      <ResourceSourceGroup>Reactors</ResourceSourceGroup>
+      <ResourceSinkGroup>Factory</ResourceSinkGroup>
+      <Capacity>50000</Capacity>
+      <InventoryMaxVolume>0.5</InventoryMaxVolume>
+      <InventorySize>
+        <X>1</X>
+        <Y>1</Y>
+        <Z>1</Z>
+      </InventorySize>
+      <BlueprintClasses>
+        <Class>HydrogenBottles</Class>
+      </BlueprintClasses>
+      <OperationalPowerConsumption>300</OperationalPowerConsumption>
+      <StandbyPowerConsumption>100</StandbyPowerConsumption>
+      <StoredGasId>
+        <TypeId>GasProperties</TypeId>
+        <SubtypeId>Hydrogen</SubtypeId>
+      </StoredGasId>
+      <DamageEffectId>213</DamageEffectId>
+      <DamagedSound>ParticleWeapExpl</DamagedSound>
+      <PCU>35</PCU>
+   	</Definition>
+  </CubeBlocks>
+</Definitions>
